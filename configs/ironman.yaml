@@ -1,0 +1,59 @@
+common:
+  prompt: Iron man in helmet is dancing, high resolution, 4k, 8k
+  negative_prompt: worst quality , bad anatomy, bad proportions, blurry, cloned face, cropped, deformed, dehydrated, extra arms, extra fingers, extra legs, jpeg artifacts, low quality, lowres, missing arms, missing legs, mutated hands, mutation, mutilated, poorly drawn face, poorly drawn hands, signature, text, too many fingers
+  seed: 17
+  img_h: 512
+  img_w: 512
+  num_inference_steps: 25
+  original_output_size: true
+  controlnet_processor: depth
+  hist_normalize: lab
+  input_video_path: ./video/input/man.mp4
+  output_video_path: ./video/output/ironman.mp4
+  model_name: runwayml/stable-diffusion-v1-5
+  unet_from: ./models/deliberate_v2.safetensors
+
+pipe_config:
+  interpolation_scheduler: ema
+  ema: 0.45
+  eta: 0.75
+  start_step: 0
+  end_step: 25
+  const_steps: 0
+
+unet_config:
+  interpolation_scheduler: ema
+  ema: 0.62
+  eta: 0.87
+  start_step: 0
+  end_step: 25
+  const_steps: 0
+  use_interpolation:
+    key: false
+    query: false
+    value: false
+    attention_probs: true
+    out_linear: true
+  attention_res: 32
+  allow_names:
+  - down
+  - mid
+  - up
+
+controlnet_config:
+  interpolation_scheduler: ema
+  ema: 0.62
+  eta: 0.87
+  start_step: 0
+  end_step: 25
+  const_steps: 0
+  use_interpolation:
+    key: false
+    query: false
+    value: false
+    attention_probs: false
+    out_linear: false
+  attention_res: 32
+  allow_names:
+  - down
+  - mid
