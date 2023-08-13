@@ -1,9 +1,10 @@
 # Interpolate Attention For Video To Video Animation
 
-Current approach allows you use controlnet diffusion models for video to video processing.
-It does't require any training or something. All models can be used from scratch as is.
-This repo uses Controlnet pipeline from <a href="https://github.com/huggingface/diffusers">diffusers</a>.
-Also you can feel free use any Unet models from other finetuned models. For creation this gif images I have used <a href="https://civitai.com/models/4823/deliberate">deliberate</a>.
+Current approach allows you use controlnet diffusion models for video to video processing.  
+It does't require any training or something. All models can be used from scratch as is.  
+This repo uses Controlnet pipeline from <a href="https://github.com/huggingface/diffusers">diffusers</a>.  
+Also you can feel free use any Unet models from other finetuned models. For creation this gif images I have used <a href="https://civitai.com/models/4823/deliberate">deliberate</a>.  
+PS. Empirically, deliberate + softedge (and depth) give the most stable result.  
 
 <!-- ![](./docs/gifs/condition_interpolation.gif) -->
 <img src="./docs/gifs/condition_interpolation.gif" width="700" height="250" />
@@ -59,9 +60,9 @@ Any Controlnet model can be used for image generation.
 
 
 # Method Description
-Attention Interpolation can be used for different layers in Attention mechanism.
-For example: Query, Key, Value, Attention Map, Output Linear Layer.
-In practice Interpolation for Attention Map and Output Linear Layer gives the best result.
+Attention Interpolation can be used for different layers in Attention mechanism.  
+For example: Query, Key, Value, Attention Map, Output Linear Layer.  
+In practice Interpolation for Attention Map and Output Linear Layer gives the best result.  
 
 <img src="./docs/images/description.png" width="800" height="500" />
 
