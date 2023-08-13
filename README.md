@@ -72,9 +72,12 @@ In practice Interpolation for Attention Map and Output Linear Layer gives the be
   eta: 0.875  # <-- for ema scheduler each denoising step ema changes: ema=ema*eta (inapplicable to cos and linear)
   ...
   use_interpolation:  # <-- layers for which interpolation is applied
-  ...
+    key: false
+    ...
+    out_linear: true
   attention_res: 32  # <-- maximum attention map resolution for which interpolation is applied
   allow_names:  # <-- part of Unet for which interpolation is applied
+  - down
   ...
 ```
 
