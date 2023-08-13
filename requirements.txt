@@ -1,0 +1,9 @@
+diffusers==0.19.3
+opencv-python==4.8.0.76
+torch==2.0.1
+omegaconf==2.3.0
+matplotlib==3.7.2
+scikit-image==0.21.0
+transformers==4.31.0
+controlnet-aux==0.0.6
+accelerate==0.21.0

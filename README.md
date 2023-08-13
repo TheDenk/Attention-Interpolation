@@ -8,7 +8,7 @@ Also you can feel free use any Unet models from other finetuned models. For crea
 <!-- ![](./docs/gifs/condition_interpolation.gif) -->
 <img src="./docs/gifs/condition_interpolation.gif" width="700" height="250" />
 
-It takes ~13GB GPU MEM.
+It takes ~7 GPU MEM with default model and ~8.5GB GPU MEM with addition unet.
 
 ### Comparison with nad without attention interpolation
 
@@ -65,6 +65,18 @@ In practice Interpolation for Attention Map and Output Linear Layer gives the be
 
 <img src="./docs/images/description.png" width="800" height="500" />
 
+## Parameters Description
+```yaml
+  interpolation_scheduler: ema  # <-- rule for changing the ema parameter
+  ema: 0.625  # <-- interpolation point between the previous frames and the current frame
+  eta: 0.875  # <-- for ema scheduler each denoising step ema changes: ema=ema*eta (inapplicable to cos and linear)
+  ...
+  use_interpolation:  # <-- layers for which interpolation is applied
+  ...
+  attention_res: 32  # <-- maximum attention map resolution for which interpolation is applied
+  allow_names:  # <-- part of Unet for which interpolation is applied
+  ...
+```
 
 ## Contacts
 <p>Issues should be raised directly in the repository. For professional support and recommendations please <a>welcomedenk@gmail.com</a>.</p>

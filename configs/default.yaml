@@ -6,7 +6,7 @@ common:
   img_w: 512 # Image width for diffuison process
   num_inference_steps: 25
   original_output_size: true # Return original video size or after diffusion process (set parameters before)
-  controlnet_processor: softedge  # softedge, pose, norm, canny, depth
+  controlnet_processor: depth  # softedge, pose, norm, canny, depth
   hist_normalize: lab  # rgb, hsv
   input_video_path: ./video/input/man.mp4
   output_video_path: ./video/output/default.mp4

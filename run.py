@@ -101,7 +101,7 @@ def main():
     ).to('cuda')
 
     if config['common']['unet_from'] is not None:
-        d_pipe = StableDiffusionPipeline.from_ckpt(
+        d_pipe = StableDiffusionPipeline.from_single_file(
             config['common']['unet_from'],
             torch_dtype=torch.float16,
         )
