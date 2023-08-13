@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
-from .stablediffusion_controlnet_pipeline import InterpolationAttentionSDCPipeline
+from .stablediffusion_controlnet_pipeline import IAttentionSDCPipeline
 
-__all__ = ['InterpolationAttentionSDCPipeline']
+__all__ = ['IAttentionSDCPipeline']

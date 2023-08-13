@@ -13,7 +13,7 @@ from .interpolation_schedulers import INTERPOLATION_SCHEDULERS
 from .utils import slerp
 
 
-class InterpolationAttentionSDCPipeline(StableDiffusionControlNetPipeline):
+class IAttentionSDCPipeline(StableDiffusionControlNetPipeline):
     def set_storage_params(self, pipe_config):
         self.ema = pipe_config['ema']
         self.start_ema = pipe_config['ema']

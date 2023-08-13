@@ -9,7 +9,7 @@ from tqdm import tqdm
 from omegaconf import OmegaConf
 from diffusers import ControlNetModel, DDIMScheduler, StableDiffusionPipeline
 
-from iattention import InterpolationAttentionSDCPipeline
+from iattention import IAttentionSDCPipeline
 from iattention.attention_processor import create_pipe_attention_control
 from iattention.controlnet_processors import CONTROLNET_PROCESSORS
 from iattention.utils import correct_colors_hist
@@ -93,7 +93,7 @@ def main():
         processor = controlnet_info['processor'].from_pretrained(
             'lllyasviel/Annotators')
 
-    pipe = InterpolationAttentionSDCPipeline.from_pretrained(
+    pipe = IAttentionSDCPipeline.from_pretrained(
         config['common']['model_name'],
         controlnet=controlnet,
         safety_checker=None,
