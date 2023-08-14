@@ -1,15 +1,15 @@
 pipeline: Kandinskiy2_2 
 
 common:
-  prompt: Professional high-quality wide-angle digital art of an iron man in helmet. photorealistic, epic fantasy, dramatic lighting, cinematic, extremely high detail, cinematic lighting, trending on artstation, cgsociety, realistic rendering of Unreal Engine 5, 8k, 4k, HQ, wallpaper
-  negative_prompt: lowres, worst quality, low quality
+  prompt: Professional high-quality wide-angle digital art of an ironman in armor. photorealistic, epic fantasy, dramatic lighting, cinematic, extremely high detail, cinematic lighting, trending on artstation, cgsociety, realistic rendering of Unreal Engine 5, 8k, 4k, HQ, wallpaper
+  negative_prompt: worst quality , bad anatomy, bad proportions, blurry, cloned face, cropped, deformed, dehydrated, extra arms, extra fingers, extra legs, jpeg artifacts, low quality, lowres, missing arms, missing legs, mutated hands, mutation, mutilated, poorly drawn face, poorly drawn hands, signature, text, too many fingers
   seed: 17
   img_h: 768 
   img_w: 768 
   num_inference_steps: 50
   controlnet_strength: 0.5
   prior_prompt_strength: 0.85
-  negative_prompt_prior_strength: 1.0
+  negative_prompt_prior_strength: 0.95
   prior_name: kandinsky-community/kandinsky-2-2-prior
   model_name: kandinsky-community/kandinsky-2-2-controlnet-depth
   original_output_size: true 
@@ -20,7 +20,7 @@ common:
 
 prior_config:
   interpolation_scheduler: ema
-  ema: 0.0 
+  ema: 0.0
   eta: 0.0
   start_step: 0
   end_step: 50
@@ -28,16 +28,16 @@ prior_config:
 
 pipe_config:
   interpolation_scheduler: ema
-  ema: 0.0 
-  eta: 0.0
+  ema: 0.51 
+  eta: 0.9
   start_step: 0
   end_step: 50
   const_steps: 0
 
 unet_config:
-  interpolation_scheduler: cos
-  ema: 0.8
-  eta: 0.0
+  interpolation_scheduler: ema
+  ema: 0.51
+  eta: 0.9
   start_step: 0
   end_step: 50
   const_steps: 0
@@ -45,8 +45,8 @@ unet_config:
     key: false
     query: false
     value: false
-    attention_probs: false
-    out_linear: false
+    attention_probs: true
+    out_linear: true
   attention_res: 32
   allow_names:
   - down
