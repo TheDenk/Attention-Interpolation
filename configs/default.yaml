@@ -1,3 +1,5 @@
+pipeline: StableDiffusion 
+
 common:
   prompt: Professional high-quality wide-angle digital art of an iron man in helmet. photorealistic, epic fantasy, dramatic lighting, cinematic, extremely high detail, cinematic lighting, trending on artstation, cgsociety, realistic rendering of Unreal Engine 5, 8k, 4k, HQ, wallpaper
   negative_prompt: lowres, worst quality, low quality
@@ -5,6 +7,7 @@ common:
   img_h: 512 # Image height for diffuison process
   img_w: 512 # Image width for diffuison process
   num_inference_steps: 25
+  guess_mode: True
   original_output_size: true # Return original video size or after diffusion process (set parameters before)
   controlnet_processor: depth  # softedge, pose, norm, canny, depth
   hist_normalize: lab  # rgb, hsv

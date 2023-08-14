@@ -1,3 +1,5 @@
+pipeline: StableDiffusion 
+
 common:
   prompt: Iron man in helmet is dancing, high resolution, 4k, 8k
   negative_prompt: worst quality , bad anatomy, bad proportions, blurry, cloned face, cropped, deformed, dehydrated, extra arms, extra fingers, extra legs, jpeg artifacts, low quality, lowres, missing arms, missing legs, mutated hands, mutation, mutilated, poorly drawn face, poorly drawn hands, signature, text, too many fingers
@@ -5,8 +7,9 @@ common:
   img_h: 512
   img_w: 512
   num_inference_steps: 25
+  guess_mode: True
   original_output_size: true
-  controlnet_processor: depth
+  controlnet_processor: softedge
   hist_normalize: lab
   input_video_path: ./video/input/man.mp4
   output_video_path: ./video/output/ironman.mp4
