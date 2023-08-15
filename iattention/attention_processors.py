@@ -93,11 +93,13 @@ class IStableDiffurionAttnProcessor(IAttnProcessor):
             }
             self.ema = self.interpolation_scheduler(**mix_kwargs)
 
-        if self.cur_step == self.total_steps - 1:
+        self.cur_step += 1
+
+        if self.cur_step == self.total_steps:
             self.cur_step = 0
             self.ema = self.start_ema
 
-        self.cur_step += 1
+        
         return hidden_states
 
 
@@ -167,12 +169,12 @@ class IKandinskiy2_2AttnProcessor(IAttnProcessor):
             }
             self.ema = self.interpolation_scheduler(**mix_kwargs)
 
-        if self.cur_step == self.total_steps - 1:
+        self.cur_step += 1
+
+        if self.cur_step == self.total_steps:
             self.cur_step = 0
             self.ema = self.start_ema
 
-        self.cur_step += 1
-        
         return hidden_states
 
 

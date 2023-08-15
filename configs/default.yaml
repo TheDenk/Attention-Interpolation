@@ -19,7 +19,7 @@ common:
 
 pipe_config:
   interpolation_scheduler: ema
-  ema: 0.45 # 0.35, 0.45 - good alternatives
+  ema: 0.35 # 0.35, 0.45 - good alternatives
   eta: 0.75
   start_step: 0
   end_step: 25
@@ -36,8 +36,8 @@ unet_config:
     key: false
     query: false
     value: false
-    attention_probs: false
-    out_linear: false
+    attention_probs: true
+    out_linear: true
   attention_res: 32
   allow_names:
   - down
