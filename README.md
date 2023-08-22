@@ -17,7 +17,10 @@ It takes ~7 GPU MEM with default model and ~8.5GB GPU MEM with addition unet.
 <img src="./docs/gifs/comparison.gif" width="1000" height="200" />
 
 # Getting Started
-
+<a target="_blank" href="https://colab.research.google.com/github/TheDenk/Attention-Interpolation/blob/main/jupyters/colab_example_attention_interpolation.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+  
 ## Install requirements
 
 ```bash
