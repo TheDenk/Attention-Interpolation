@@ -4,7 +4,7 @@ from typing import Any, Callable, Dict, List, Optional, Union
 import PIL
 import torch
 import numpy as np
-from diffusers.utils import is_compiled_module
+from diffusers.utils.torch_utils import is_compiled_module
 
 from diffusers import StableDiffusionControlNetPipeline, ControlNetModel
 from diffusers.pipelines.stable_diffusion import StableDiffusionPipelineOutput
